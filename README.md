@@ -58,7 +58,7 @@ Here comes [Dangling Markup](https://book.hacktricks.xyz/pentesting-web/dangling
 After getting the admin code, we can login into his account. Now we have access to the full dashboard functionality.
 
 ### Step two
-For the second part, the main issue resides in the `bulk_send` functionality. While normal users can only send one message at a time, admin users can enter emails separated by a comma and the backend will create a queue of messages. After that, the backend attempts to include the referral message in **all** the queue emails, without if they are already rendered:
+For the second part, the main issue resides in the `bulk_send` functionality. While normal users can only send one message at a time, admin users can enter emails separated by a comma and the backend will create a queue of messages. After that, the backend attempts to include the referral message in **all** the queue emails, without checking if they are already rendered:
 
 ```py
 def send_bulk(self, sender_email, rcpts, message):
