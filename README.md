@@ -6,9 +6,9 @@ Here are the sources and solutions for the challenges I created for TFC CTF 2024
 
 PNGiphy was a HARD web challenge involving Cache Poisoning coupled with XSS.
 
-After navigating on the platform, we can see that image upload is possible. Hoewever, no sanitization is in place, so we can upload any file, like a valid js or html and it will be saved under `/static/images/<id>`.
+After navigating on the platform, we can see that image upload is possible. However, no sanitization is in place, so we can upload any file, like a valid JS or HTML and it will be saved under `/static/images/<id>`.
 
-Also, images can be reported to a bot which will visit them. But the bot only visits `/?image=imageid`, which loads the corresponding uploaded file into an `img` tag, so XSS should not be possible.
+Also, images can be reported to a bot that will visit them. But the bot only visits `/?image=imageid`, which loads the corresponding uploaded file into an `img` tag, so XSS should not be possible.
 
 After a closer look, we can see caching is enabled in nginx.conf:
 
