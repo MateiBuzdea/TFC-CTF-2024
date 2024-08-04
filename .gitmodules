@@ -1,0 +1,9 @@
+[submodule "PNGiphy"]
+	path = PNGiphy
+	url = git@github.com:MateiBuzdea/PNGiphy.git
+[submodule "Phisher"]
+	path = Phisher
+	url = git@github.com:MateiBuzdea/Phisher.git
+[submodule "Signature"]
+	path = Signature
+	url = git@github.com:MateiBuzdea/Signature.git
